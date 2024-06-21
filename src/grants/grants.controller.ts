@@ -26,7 +26,7 @@ export class GrantsController {
     }
     const grants = await this.parseCsvService.parseCsv(file.buffer.toString());
     await this.grantsService.save(grants);
-    return { message: 'File processed successfully' };
+    return { message: 'File processed successfully', grants };
   }
 
   @Get('/')
